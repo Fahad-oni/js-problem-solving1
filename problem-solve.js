@@ -15,7 +15,7 @@ console.log(reverseStr('fahad'));
 function vowelCheck(str) {
   let vowel = 'aeiou';
   let count = 0;
-  for (let i = 0; i <= str.length - 1; i++){
+  for (let i = 0; i <= str.length - 1; i++) {
     if (vowel.includes(str[i])) {
       console.log(`The letter is >> ${str[i]} << and its a vowel.`);
       count++;
@@ -49,21 +49,39 @@ console.log(vowelCheck(String));
 
 // console.log(vowelCheck(String));
 
-
 // Task 13-2A: Hot, Cold, or Normal
 // Write a function checkTemperature that takes a temperature (in Celsius) and returns "Hot" if it is 30 or above, "Cold" if it is 15 or below, and "Normal" otherwise.
 
 function checkTemperature(temp) {
   if (temp >= 30) {
-    return 'Hot'
+    return 'Hot';
   } else if (temp <= 15) {
-    return 'Cold'
+    return 'Cold';
   } else {
-    return 'Normal'
+    return 'Normal';
   }
 }
 
 console.log(checkTemperature(40));
 console.log(checkTemperature(20));
 console.log(checkTemperature(10));
+
+// Task 13-2B: Reverse a Number
+// Write a function reverseNumber that takes a positive whole number and returns it with its digits reversed. (Hint: convert the number to a string first.)
+
+function reverseNumber(num) {
+
+  let numToString = num.toString().split('').reverse().join('');
+  
+  // return numToString;
+
+  let strToNum = Number(numToString);
+  return strToNum;
+}
+
+
+
+console.log(reverseNumber(1234));
+console.log(reverseNumber(7));
+
 
