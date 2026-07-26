@@ -70,30 +70,25 @@ console.log(checkTemperature(10));
 // Write a function reverseNumber that takes a positive whole number and returns it with its digits reversed. (Hint: convert the number to a string first.)
 
 function reverseNumber(num) {
-
   let numToString = num.toString().split('').reverse().join('');
-  
+
   // return numToString;
 
   let strToNum = Number(numToString);
   return strToNum;
 }
 
-
-
 console.log(reverseNumber(12434));
 console.log(reverseNumber(7));
-
 
 // Task 13-3A: Product of Digits
 // Write a function productOfDigits that takes a positive whole number and returns the product of its individual digits.
 
 function productOfDigits(num) {
-
   let str = num.toString();
-  let total =1;
+  let total = 1;
 
-  for (let i = 0; i< str.length; i++){
+  for (let i = 0; i < str.length; i++) {
     total = total * Number(str[i]);
   }
   return total;
@@ -102,3 +97,19 @@ function productOfDigits(num) {
 console.log(productOfDigits(1234));
 console.log(productOfDigits(4040));
 console.log(productOfDigits(3523623));
+
+// Task 13-3B: Odd Numbers Up To N
+// Write a function getOddNumbers that takes a number n and returns an array of all odd numbers from 1 to n (inclusive).
+
+function getOddNumbers(n) {
+  let oddNumbers = [];
+
+  for (let i = 1; i <= n; i++){
+    if (i % 2 !== 0) {
+      oddNumbers.push(i);
+    }
+  }
+  return oddNumbers;
+}
+
+console.log(getOddNumbers(76));
