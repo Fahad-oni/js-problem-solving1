@@ -81,7 +81,24 @@ function reverseNumber(num) {
 
 
 
-console.log(reverseNumber(1234));
+console.log(reverseNumber(12434));
 console.log(reverseNumber(7));
 
 
+// Task 13-3A: Product of Digits
+// Write a function productOfDigits that takes a positive whole number and returns the product of its individual digits.
+
+function productOfDigits(num) {
+
+  let str = num.toString();
+  let total =1;
+
+  for (let i = 0; i< str.length; i++){
+    total = total * Number(str[i]);
+  }
+  return total;
+}
+
+console.log(productOfDigits(1234));
+console.log(productOfDigits(4040));
+console.log(productOfDigits(3523623));
