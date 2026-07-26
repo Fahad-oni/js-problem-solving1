@@ -113,3 +113,15 @@ function getOddNumbers(n) {
 }
 
 console.log(getOddNumbers(76));
+
+
+// Task 13-4B: Remove First and Last Character
+// Write a function removeFirstAndLast that takes a string and returns it with the first and last character removed.
+
+function removeFirstAndLast(str) {
+
+  let slicedStr = str.slice(1, str.length-1);
+  return slicedStr;
+}
+
+console.log(removeFirstAndLast('hello'));
