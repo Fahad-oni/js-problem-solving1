@@ -190,21 +190,17 @@ function countMultiplesOfThree(arr) {
 }
 console.log(countMultiplesOfThree([3, 4, 6, 7, 9, 10]));
 
-
 // Task 13-8A: List an Object's Keys
 // Write a function listKeys that takes an object and returns an array containing its property names (keys).
 
 function listKeys(obj) {
-
   let keys = [];
   for (let key in obj) {
     keys.push(key);
   }
   return keys;
-
 }
 console.log(listKeys({ name: 'Sam', age: 25, city: 'Dhaka' }));
-
 
 // Task 13-8B: Get a Value or a Default
 // Write a function getValueOrDefault that takes an object, a key name, and a default value, and returns the object's value for that key if it exists, otherwise the default value.
@@ -220,3 +216,39 @@ function getValueOrDefault(obj, key, defaultValue) {
 let person = { name: 'Sam', age: 25 };
 console.log(getValueOrDefault(person, 'age', 0));
 console.log(getValueOrDefault(person, 'grade', 'N/A'));
+
+// Task 13-9: Long Words Above a Length, Then Their Count
+//1. getWordsLongerThan — takes an array of words and a length threshold, and returns a new array containing every word whose length is greater than the threshold.
+
+//2. countArray — takes an array and returns how many elements it contains.
+
+function getWordsLongerThan(words, mainLength) {
+  let longWords = [];
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > mainLength) {
+      longWords.push(words[i]);
+    }
+  }
+  return longWords;
+}
+
+function countArray(arr) {
+  let count = 0;
+  
+  for (let i = 0; i < arr.length; i++){
+    count++;
+  }
+  return count;
+}
+
+let longWords = getWordsLongerThan(
+['cat', 'elephant', 'dog', 'hippopotamus', 'ox'],
+3,
+);
+let total = countArray(longWords);
+
+console.log(longWords);
+console.log(total);
+
+
