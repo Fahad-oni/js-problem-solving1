@@ -235,16 +235,16 @@ function getWordsLongerThan(words, mainLength) {
 
 function countArray(arr) {
   let count = 0;
-  
-  for (let i = 0; i < arr.length; i++){
+
+  for (let i = 0; i < arr.length; i++) {
     count++;
   }
   return count;
 }
 
 let longWords = getWordsLongerThan(
-['cat', 'elephant', 'dog', 'hippopotamus', 'ox'],
-3,
+  ['cat', 'elephant', 'dog', 'hippopotamus', 'ox'],
+  3,
 );
 let total = countArray(longWords);
 
@@ -273,15 +273,18 @@ function reverseWords(str) {
 
 console.log(reverseWords('hello world'));
 
-
 // generate report card
 
 function generateReportCard(student) {
   if (typeof student !== 'object' || Array.isArray(student) === true) {
     return 'Invalid';
-  } 
+  }
 
-  if (typeof student.english !== 'number' || typeof student.bangla !== 'number' || typeof student.math !== 'number') {
+  if (
+    typeof student.english !== 'number' ||
+    typeof student.bangla !== 'number' ||
+    typeof student.math !== 'number'
+  ) {
     return 'Invalid';
   }
   const total = student.bangla + student.english + student.math;
@@ -290,7 +293,7 @@ function generateReportCard(student) {
 
   let grade;
   if (avarage >= 90) {
-    grade = 'A+'
+    grade = 'A+';
   } else if (avarage >= 80) {
     grade = 'A';
   } else if (avarage >= 70) {
@@ -298,12 +301,12 @@ function generateReportCard(student) {
   } else {
     grade = 'F';
   }
-  
+
   const returnObj = {
     name: student.name,
     total: total,
-    grade: grade
-  }
+    grade: grade,
+  };
   return returnObj;
 }
 
@@ -311,8 +314,24 @@ const studentObj = {
   name: 'Ayan',
   bangla: 78,
   english: 85,
-  math: 92
-}
+  math: 92,
+};
 
 const result = generateReportCard(studentObj);
 console.log(result);
+
+// Leaf Year Check
+
+function isLeafYear(year) {
+  if (year % 4 === 0) {
+    if (year % 100 !== 0 || year % 400 === 0) {
+      return true;
+    }
+  } else {
+    return false;
+  }
+}
+
+const y = 2028;
+const Yresult = isLeafYear(y);
+console.log(Yresult);
