@@ -335,3 +335,36 @@ function isLeafYear(year) {
 const y = 2028;
 const Yresult = isLeafYear(y);
 console.log(Yresult);
+
+//  Analyze Email Domain
+
+function analyzeEmailDomain(text) {
+  if (typeof text !== 'string') {
+    return 'invalid';
+  }
+  const words = text.split(' ');
+
+  let longestDomain = '';
+  let emailCount = 0;
+  for (let word of words) {
+    if (word.includes('@')) {
+      emailCount++;
+      const parts = word.split('@');
+      const domain = parts[1];
+      if (domain.length > longestDomain.length) {
+        longestDomain = domain;
+      }
+    }
+  }
+  
+  const returnObj = {
+    emailCount: emailCount,
+    longestDomain:longestDomain
+  }
+  return returnObj;
+}
+
+const t =
+  'Contact support@gmail.com admin@yahoo.com info@programminghero.com';
+const Eresult = analyzeEmailDomain(t);
+console.log(Eresult);
