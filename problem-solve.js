@@ -265,9 +265,45 @@ function isPerfectSquare(num) {
 console.log(isPerfectSquare(49));
 
 
+// generate report card
 
+function generateReportCard(student) {
+  if (typeof student !== 'object' || Array.isArray(student) === true) {
+    return 'Invalid';
+  } 
 
+  if (typeof student.english !== 'number' || typeof student.bangla !== 'number' || typeof student.math !== 'number') {
+    return 'Invalid';
+  }
+  const total = student.bangla + student.english + student.math;
 
+  const avarage = total / 3;
 
+  let grade;
+  if (avarage >= 90) {
+    grade = 'A+'
+  } else if (avarage >= 80) {
+    grade = 'A';
+  } else if (avarage >= 70) {
+    grade = 'B';
+  } else {
+    grade = 'F';
+  }
+  
+  const returnObj = {
+    name: student.name,
+    total: total,
+    grade: grade
+  }
+  return returnObj;
+}
 
-// 
+const studentObj = {
+  name: 'Ayan',
+  bangla: 78,
+  english: 85,
+  math: 92
+}
+
+const result = generateReportCard(studentObj);
+console.log(result);
