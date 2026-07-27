@@ -264,6 +264,15 @@ function isPerfectSquare(num) {
 
 console.log(isPerfectSquare(49));
 
+// 13-10B: Reverse the Word Order
+// Write a function reverseWords that takes a sentence and returns it with the order of the words reversed (the letters inside each word stay the same).
+
+function reverseWords(str) {
+  return str.split(' ').reverse().join(' ');
+}
+
+console.log(reverseWords('hello world'));
+
 
 // generate report card
 
