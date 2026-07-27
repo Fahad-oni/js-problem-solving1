@@ -201,7 +201,22 @@ function listKeys(obj) {
     keys.push(key);
   }
   return keys;
-  
+
 }
 console.log(listKeys({ name: 'Sam', age: 25, city: 'Dhaka' }));
 
+
+// Task 13-8B: Get a Value or a Default
+// Write a function getValueOrDefault that takes an object, a key name, and a default value, and returns the object's value for that key if it exists, otherwise the default value.
+
+function getValueOrDefault(obj, key, defaultValue) {
+  if (obj[key] !== undefined) {
+    return obj[key];
+  } else {
+    return defaultValue;
+  }
+}
+
+let person = { name: 'Sam', age: 25 };
+console.log(getValueOrDefault(person, 'age', 0));
+console.log(getValueOrDefault(person, 'grade', 'N/A'));
