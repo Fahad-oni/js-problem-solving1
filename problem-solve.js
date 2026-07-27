@@ -104,7 +104,7 @@ console.log(productOfDigits(3523623));
 function getOddNumbers(n) {
   let oddNumbers = [];
 
-  for (let i = 1; i <= n; i++){
+  for (let i = 1; i <= n; i++) {
     if (i % 2 !== 0) {
       oddNumbers.push(i);
     }
@@ -114,18 +114,15 @@ function getOddNumbers(n) {
 
 console.log(getOddNumbers(76));
 
-
 // Task 13-4B: Remove First and Last Character
 // Write a function removeFirstAndLast that takes a string and returns it with the first and last character removed.
 
 function removeFirstAndLast(str) {
-
-  let slicedStr = str.slice(1, str.length-1);
+  let slicedStr = str.slice(1, str.length - 1);
   return slicedStr;
 }
 
 console.log(removeFirstAndLast('hello'));
-
 
 // Task 13-5A: Check for a Palindrome
 // Write a function isPalindrome that takes a string and returns true if it reads the same forwards and backwards, otherwise false. Assume lowercase, no spaces.
@@ -143,20 +140,38 @@ function isPalindrome(str) {
 console.log(isPalindrome('level'));
 console.log(isPalindrome('hello'));
 
-
 // Task 13-5B: Find the Shortest Word in a Sentence
 // Write a function findShortestWord that takes a sentence and returns the shortest word in it.
 
-
 function findShortestWord(str) {
-  let word = str.split(' ')
+  let word = str.split(' ');
   let shortest = word[0];
-  for (let i = 0; i <= word.length - 1; i++){
+  for (let i = 0; i <= word.length - 1; i++) {
     if (shortest.length > word[i].length) {
       shortest = word[i];
-    }    
+    }
   }
   return shortest;
 }
 
 console.log(findShortestWord('JavaScript is a fun language'));
+
+// Task 13-6A: Find the Second Smallest Number
+// Write a function findSecondSmallest that takes an array of numbers and returns the second smallest distinct value.
+
+function findSecondSmallest(arr) {
+  let smallest = Infinity;
+  let secondSmallest = Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (smallest > arr[i]) {
+      secondSmallest = smallest;
+      smallest = arr[i];
+    } else if (arr[i] > smallest && secondSmallest > arr[i]) {
+      secondSmallest = arr[i];
+    }
+  }
+  return secondSmallest;
+}
+
+console.log(findSecondSmallest([4, 6, 7, 3, 2, 4, 7, 9]));
