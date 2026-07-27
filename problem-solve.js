@@ -251,4 +251,23 @@ let total = countArray(longWords);
 console.log(longWords);
 console.log(total);
 
+// 13-10A: Perfect Square Checker
+//  Write a function isPerfectSquare that takes a number and returns true if it is a perfect square, otherwise false.
 
+function isPerfectSquare(num) {
+  if (Number.isInteger(Math.sqrt(num))) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(isPerfectSquare(49));
+
+
+
+
+
+
+
+// 
