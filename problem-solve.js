@@ -174,4 +174,20 @@ function findSecondSmallest(arr) {
   return secondSmallest;
 }
 
-console.log(findSecondSmallest([4, 6, 7, 3, 2, 4, 7, 9]));
+console.log(findSecondSmallest([10, 5, 8, 20, 15]));
+
+// Task 13-6B: Count Multiples of Three
+// Write a function countMultiplesOfThree that takes an array of numbers and returns how many of them are divisible by 3.
+
+function countMultiplesOfThree(arr) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 3 === 0) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countMultiplesOfThree([3, 4, 6, 7, 9, 10]));
+
+
