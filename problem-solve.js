@@ -368,3 +368,4 @@ const t =
   'Contact support@gmail.com admin@yahoo.com info@programminghero.com';
 const Eresult = analyzeEmailDomain(t);
 console.log(Eresult);
+
